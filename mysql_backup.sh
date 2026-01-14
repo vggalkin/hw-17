@@ -1,11 +1,12 @@
 #!/bin/bash
 
 # Загружаем настройки из файла
-CONFIG_FILE="mysql_backup.conf"
+CONFIG_FILE="/etc/mysql_backup.conf"
 if [ -f "$CONFIG_FILE" ]; then
     source $CONFIG_FILE
 else
     echo "Ошибка. Отсутствует файл конфигурации!"
+    exit 1
 fi
 
 # Дата для имени файла
